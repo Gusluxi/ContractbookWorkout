@@ -39,7 +39,9 @@ public class Employees {
         }
     }
 
+    /*
     @PatchMapping("/summoners/{id}")
+
     public String patchEmployee(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employees.findById(id).map( foundEmployee -> {
             if(employeeToUpdate.getSummonerId() != null) foundEmployee.setSummonerId(employeeToUpdate.getName());
@@ -48,7 +50,11 @@ public class Employees {
             employees.save(employeeToUpdate);
             return "Employee updated";
         }).orElse("Employee not found");
+
+
     }
+
+     */
 
     @DeleteMapping("/employees/{id}")
     public void deleteEmployee(@PathVariable Long id) {
