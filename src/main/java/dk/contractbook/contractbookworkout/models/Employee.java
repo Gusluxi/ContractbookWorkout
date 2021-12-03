@@ -23,6 +23,6 @@ public class Employee {
     private String slackImage;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "workout", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Workout> workouts;
 }
