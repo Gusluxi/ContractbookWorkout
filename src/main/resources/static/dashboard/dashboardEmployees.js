@@ -31,8 +31,11 @@ function displayEmployeeWorkouts(employee, workouts) {
     const currentWorkouts = workouts.filter(workout => {let workoutDate = new Date(workout.workoutDate);
          return (startDate < workoutDate && workoutDate < endDate)
     });
+    let visualWorkout = currentWorkouts.length * 25;
     listEmployeesDiv.innerHTML = `
-        <div>${employee.name} & ${currentWorkouts.length}</div>
+        <div>${employee.name} & ${currentWorkouts.length}
+        <div id="visual-bar" style="background-color: aqua; height: 20px; width: ${visualWorkout}px"></div>
+        </div>
     `
     dashboardEmployeesDiv.appendChild(listEmployeesDiv);
 }
