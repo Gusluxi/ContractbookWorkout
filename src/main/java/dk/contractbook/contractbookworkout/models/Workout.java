@@ -17,7 +17,7 @@ public class Workout {
     private Long id;
 
     @Column
-    private LocalDate workoutDates;
+    private LocalDate workoutDate;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")

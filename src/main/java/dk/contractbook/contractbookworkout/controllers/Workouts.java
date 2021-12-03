@@ -1,10 +1,13 @@
 package dk.contractbook.contractbookworkout.controllers;
 
+import dk.contractbook.contractbookworkout.models.Employee;
 import dk.contractbook.contractbookworkout.models.Workout;
 import dk.contractbook.contractbookworkout.repositories.WorkoutsRepo;
 import org.hibernate.jdbc.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class Workouts {
@@ -21,6 +24,11 @@ public class Workouts {
     @GetMapping("/workouts/{id}")
     public Workout getWorkout(@PathVariable Long id) {
         return workouts.findById(id).get();
+    }
+
+    @GetMapping("/workouts/employees/{id}")
+    public List<Workout> getEmployeeWorkouts(@PathVariable Long id) {
+        return workouts.findWorkoutsByEmployeeId(id);
     }
 
     @PostMapping("/workouts")
