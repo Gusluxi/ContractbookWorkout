@@ -39,7 +39,7 @@ public class Workouts {
             return "Workout not found";
         }
     }
-
+/*
     @PatchMapping("/workouts/{id}")
     public String patchWorkout(@PathVariable Long id, @RequestBody Workout workoutsToUpdate) {
         return workouts.findById(id).map( foundWorkout -> {
@@ -50,7 +50,7 @@ public class Workouts {
             return "Workout updated";
         }).orElse("Workout not found");
     }
-
+*/
     @DeleteMapping("/workouts/{id}")
     public void deleteSummoner(@PathVariable Long id) {
         workouts.deleteById(id);

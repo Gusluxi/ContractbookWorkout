@@ -38,7 +38,7 @@ public class Prizes {
             return "Prize not found";
         }
     }
-
+/*
     @PatchMapping("/prizes/{id}")
     public String patchPrize(@PathVariable Long id, @RequestBody Prize prizeToUpdate) {
         return prizes.findById(id).map( foundPrize -> {
@@ -49,7 +49,7 @@ public class Prizes {
             return "Prize updated";
         }).orElse("Prize not found");
     }
-
+*/
     @DeleteMapping("/prizes/{id}")
     public void deletePrize(@PathVariable Long id) {
         prizes.deleteById(id);
