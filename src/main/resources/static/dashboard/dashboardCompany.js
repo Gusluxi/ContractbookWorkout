@@ -1,32 +1,41 @@
 const companyWorkoutWrapperYearly = document.getElementById("company-workout-yearly");
 const companyWorkoutWrapperMonthly = document.getElementById("company-workout-monthly");
 
+console.log(startDate + " & " + endDate);
+let fetchedWorkouts;
 
 fetch(APIUrl + "/workouts")
     .then(response => response.json())
     .then(workouts => {
-        workouts.map(createCompanyWorkoutCardYearly);
-    });
+        fetchedWorkouts = workouts;
+        displayYearlyWorkouts(workouts);
+        displayMonthlyWorkouts(workouts);
 
-fetch(APIUrl + "/workouts")
-    .then(response => response.json())
-    .then(workouts => {
-        workouts.map(createCompanyWorkoutCardMonthly(workouts));
     });
 
 
-function createCompanyWorkoutCardYearly(workout) {
-    const workoutDivYearlyElement = document.createElement("div");
-    workoutDivYearlyElement.innerText = workout.name;
-
-    companyWorkoutWrapperYearly.appendChild(workoutDivYearlyElement);
+function displayYearlyWorkouts(workouts) {
+    const yearlyWorkoutsDiv = document.createElement("div");
+    const yearlyWorkouts = workouts.filter(workouts => {
+        let workoutDates = new Date(workouts.workoutDates);
+        return (startDate < workoutDates && workoutDates < endDate)
+    });
+    yearlyWorkoutsDiv.innerHTML = `
+    <div>${yearlyWorkouts.length}</div>
+    `;
+    companyWorkoutWrapperYearly.appendChild(yearlyWorkoutsDiv);
 }
 
-function createCompanyWorkoutCardMonthly(workout) {
-
-    const workoutDivMonthlyElement = document.createElement("div");
-    workoutDivMonthlyElement.innerText = workout.name;
-
-    companyWorkoutWrapperMonthly.appendChild(workoutDivMonthlyElement);
+function displayMonthlyWorkouts(workouts) {
+    const monthlyWorkoutsDiv = document.createElement("div");
+    const monthlyWorkouts = workouts.filter(workouts => {
+        let workoutDates = new Date(workouts.workoutDates);
+        return (startDate < workoutDates && workoutDates < endDate)
+    });
+    monthlyWorkoutsDiv.innerHTML = `
+    <div>${monthlyWorkouts.length}</div>
+    `;
+    companyWorkoutWrapperMonthly.appendChild(monthlyWorkoutsDiv);
 }
+
 

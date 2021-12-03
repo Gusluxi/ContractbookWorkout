@@ -47,7 +47,8 @@ public class Workouts {
             return "Workout not found";
         }
     }
-/*
+
+    /*
     @PatchMapping("/workouts/{id}")
     public String patchWorkout(@PathVariable Long id, @RequestBody Workout workoutsToUpdate) {
         return workouts.findById(id).map( foundWorkout -> {
