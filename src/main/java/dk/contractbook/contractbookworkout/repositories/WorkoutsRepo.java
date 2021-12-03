@@ -1,4 +1,7 @@
 package dk.contractbook.contractbookworkout.repositories;
 
-public class WorkoutsRepo {
+import dk.contractbook.contractbookworkout.models.Workout;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface WorkoutsRepo extends JpaRepository<Workout, Long> {
 }

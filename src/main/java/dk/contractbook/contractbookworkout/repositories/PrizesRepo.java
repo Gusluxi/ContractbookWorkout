@@ -1,4 +1,7 @@
 package dk.contractbook.contractbookworkout.repositories;
 
-public class PrizesRepo {
+import dk.contractbook.contractbookworkout.models.Prize;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PrizesRepo extends JpaRepository<Prize, Long> {
 }
