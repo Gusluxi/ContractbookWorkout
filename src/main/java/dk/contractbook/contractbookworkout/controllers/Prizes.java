@@ -38,7 +38,8 @@ public class Prizes {
             return "Prize not found";
         }
     }
-/*
+
+    /*
     @PatchMapping("/prizes/{id}")
     public String patchPrize(@PathVariable Long id, @RequestBody Prize prizeToUpdate) {
         return prizes.findById(id).map( foundPrize -> {

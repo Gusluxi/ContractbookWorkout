@@ -1,32 +1,46 @@
-const companyWorkoutWrapperYearly = document.getElementById("company-workout-yearly");
 const companyWorkoutWrapperMonthly = document.getElementById("company-workout-monthly");
-
+const companyWorkoutWrapperYearly = document.getElementById("company-workout-yearly");
+let date = new Date();
+let startDate = new Date(date.getFullYear(), date.getMonth(), 1);
+let endDate = new Date(date.getFullYear(), date.getMonth() +1, 0);
+console.log(startDate + " & " + endDate);
+let fetchedWorkouts;
 
 fetch(APIUrl + "/workouts")
     .then(response => response.json())
     .then(workouts => {
-        workouts.map(createCompanyWorkoutCardYearly);
+        workouts.map(addWorkOutInfoToDivList);
+        fetchedWorkouts = workouts;
+        createCompanyWorkoutCardYearly(workouts);
+
     });
 
 fetch(APIUrl + "/workouts")
     .then(response => response.json())
     .then(workouts => {
-        workouts.map(createCompanyWorkoutCardMonthly(workouts));
+        workouts.map(createCompanyWorkoutCardMonthly);
     });
 
 
-function createCompanyWorkoutCardYearly(workout) {
-    const workoutDivYearlyElement = document.createElement("div");
-    workoutDivYearlyElement.innerText = workout.name;
+function addWorkOutInfoToDivList(workout){
+    const workoutInfoToDiv = document.createElement("div");
+    companyWorkoutWrapperYearly.appendChild(workoutInfoToDiv);
+    console.log(workout);
+    console.log(workoutInfoToDiv);
+    console.log("hej");
 
-    companyWorkoutWrapperYearly.appendChild(workoutDivYearlyElement);
+    displayYearlyWorkouts(workoutInfoToDiv, workout);
 }
 
-function createCompanyWorkoutCardMonthly(workout) {
 
-    const workoutDivMonthlyElement = document.createElement("div");
-    workoutDivMonthlyElement.innerText = workout.name;
-
-    companyWorkoutWrapperMonthly.appendChild(workoutDivMonthlyElement);
+function displayYearlyWorkouts(workouts) {
+    const yearlyWorkoutsDiv = document.createElement("div");
+    const yearlyWorkouts = workouts.filter(workouts => {
+        let workoutDates = new Date(workouts.workoutDates);
+        return (startDate < workoutDates && workoutDates < endDate)
+    });
+    yearlyWorkoutsDiv.innerHTML = `
+    <div>${yearlyWorkouts.length}</div>
+    `;
+    companyWorkoutWrapperYearly.appendChild(yearlyWorkoutsDiv);
 }
-
