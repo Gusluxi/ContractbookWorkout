@@ -1,7 +1,9 @@
 const companyWorkoutWrapperYearly = document.getElementById("company-workout-yearly");
 const companyWorkoutWrapperMonthly = document.getElementById("company-workout-monthly");
-
-console.log(startDate + " & " + endDate);
+let dateFullYear = new Date();
+let startDateFullYear = new Date(dateFullYear.getFullYear(),0, 1);
+let endDateFullYear = new Date(dateFullYear.getFullYear(),0,365);
+console.log(startDateFullYear + " & " + endDateFullYear);
 let fetchedWorkouts;
 
 fetch(APIUrl + "/workouts")
@@ -17,8 +19,8 @@ fetch(APIUrl + "/workouts")
 function displayYearlyWorkouts(workouts) {
     const yearlyWorkoutsDiv = document.createElement("div");
     const yearlyWorkouts = workouts.filter(workouts => {
-        let workoutDates = new Date(workouts.workoutDates);
-        return (startDate < workoutDates && workoutDates < endDate)
+        let workoutDates = new Date(workouts.workoutDate);
+        return (startDateFullYear < workoutDates && workoutDates < endDateFullYear)
     });
     yearlyWorkoutsDiv.innerHTML = `
     <div>${yearlyWorkouts.length}</div>
@@ -29,7 +31,7 @@ function displayYearlyWorkouts(workouts) {
 function displayMonthlyWorkouts(workouts) {
     const monthlyWorkoutsDiv = document.createElement("div");
     const monthlyWorkouts = workouts.filter(workouts => {
-        let workoutDates = new Date(workouts.workoutDates);
+        let workoutDates = new Date(workouts.workoutDate);
         return (startDate < workoutDates && workoutDates < endDate)
     });
     monthlyWorkoutsDiv.innerHTML = `
