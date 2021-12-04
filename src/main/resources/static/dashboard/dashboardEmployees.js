@@ -39,13 +39,24 @@ function displayEmployeeWorkouts(employee, workouts) {
     listEmployeesDiv.id=employee.id;
     const currentWorkouts = workouts.filter(workout => filterWorkoutsForMonth(workout));
     listEmployeesDiv.innerHTML = `
-        <div>${employee.name}s Workouts: ${currentWorkouts.length}
-        <div id="visual-bar-${employee.id}" class="visual-bar" ></div>
+        <div class="employee-card">
+            <a href="../employee/employee.html?employeeId=${employee.id}"><img src="${employee.slackImage}" alt="Employee Image" width="50px"></a>
+            <div class="name-bar-wrapper">
+                <div class="name-wrapper"><a href="../employee/employee.html?employeeId=${employee.id}">${employee.name}s Workouts: ${currentWorkouts.length}</a></div>
+                <div id="visual-bar-${employee.id}" class="visual-bar"></div>
+            </div>
+            <div class="goal-mark"><div class="goal-text">of 20</div></div>
         </div>
+        <div class="employee-underline"></div>
     `
     dashboardEmployeesDiv.appendChild(listEmployeesDiv);
     const visualBar = document.getElementById(`visual-bar-${employee.id}`);
-    visualBar.style.width = currentWorkouts.length * 25+"px";
+
+    let progressBar = currentWorkouts.length * 4.25+"%";
+    if (currentWorkouts.length > 23) {
+        progressBar = "100%";
+    }
+    visualBar.style.width = progressBar;
     visualBar.addEventListener("mouseover", event => {
         event.target.style.backgroundColor = "#515757";
         event.target.innerHTML = currentWorkouts.length;
