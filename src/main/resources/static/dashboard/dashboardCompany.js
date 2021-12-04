@@ -23,7 +23,7 @@ function displayYearlyWorkouts(workouts) {
         return (startDateFullYear < workoutDates && workoutDates < endDateFullYear)
     });
     yearlyWorkoutsDiv.innerHTML = `
-    <div>${yearlyWorkouts.length}</div>
+    <div>Company Total Yearly Workouts: ${yearlyWorkouts.length}</div>
     `;
     companyWorkoutWrapperYearly.appendChild(yearlyWorkoutsDiv);
 }
@@ -35,7 +35,7 @@ function displayMonthlyWorkouts(workouts) {
         return (startDate < workoutDates && workoutDates < endDate)
     });
     monthlyWorkoutsDiv.innerHTML = `
-    <div>${monthlyWorkouts.length}</div>
+    <div>Company Total Monthly Workouts: ${monthlyWorkouts.length}</div>
     `;
     companyWorkoutWrapperMonthly.appendChild(monthlyWorkoutsDiv);
 }
