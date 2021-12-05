@@ -45,7 +45,6 @@ function displayEmployeeWorkouts(employee, workouts) {
                 <div class="name-wrapper"><a href="../employee/employee.html?employeeId=${employee.id}">${employee.name}s Workouts: ${currentWorkouts.length}</a></div>
                 <div id="visual-bar-${employee.id}" class="visual-bar"></div>
             </div>
-            <div class="goal-mark"><div class="goal-text">of 20</div></div>
         </div>
         <div class="employee-underline"></div>
     `
