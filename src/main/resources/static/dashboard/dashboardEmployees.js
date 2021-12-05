@@ -11,15 +11,24 @@ fetch(APIUrl + "/employees")
     .then(employees => {
         allEmployees = employees;
         console.log("Employees",employees);
+        fetch(APIUrl + "/workouts")
+            .then(response => response.json())
+            .then(workouts => {
+                allWorkouts = workouts;
+                console.log("Workouts",workouts)
+                filterEmployees(allEmployees, allWorkouts)
+                fetch(APIUrl + "/challengedates")
+                    .then(response => response.json())
+                    .then(challengeDates => {
+                        challengeDates.map(challengeDate =>{
+                            displayTopEmployeeChallenges(allEmployees, allWorkouts, challengeDate)
+                        })
+                    })
+            });
     })
 
-fetch(APIUrl + "/workouts")
-    .then(response => response.json())
-    .then(workouts => {
-        allWorkouts = workouts;
-        console.log("Workouts",workouts)
-        filterEmployees(allEmployees, allWorkouts)
-    });
+
+
 
 function filterEmployees(employees, workouts) {
     let newWorkouts = workouts.filter(workout => filterWorkoutsForMonth(workout))
