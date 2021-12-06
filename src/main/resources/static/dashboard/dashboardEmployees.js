@@ -55,7 +55,6 @@ function displayEmployeeWorkouts(employee, workouts) {
                 <div id="visual-bar-${employee.id}" class="visual-bar"></div>
             </div>
         </div>
-        <div class="employee-underline"></div>
     `
     dashboardEmployeesDiv.appendChild(listEmployeesDiv);
     const visualBar = document.getElementById(`visual-bar-${employee.id}`);
@@ -64,13 +63,17 @@ function displayEmployeeWorkouts(employee, workouts) {
     if (currentWorkouts.length > 23) {
         progressBar = "100%";
     }
+    visualBar.style.backgroundColor = "#4c58ed";
+    if (currentWorkouts.length >= 20) {
+        visualBar.style.backgroundColor = "#00de9f";
+    }
     visualBar.style.width = progressBar;
     visualBar.addEventListener("mouseover", event => {
-        event.target.style.backgroundColor = "#515757";
+        //event.target.style.backgroundColor = "#515757";
         event.target.innerHTML = currentWorkouts.length;
     })
     visualBar.addEventListener("mouseout", event => {
-        event.target.style.backgroundColor = "#a5a7a7";
+        //event.target.style.backgroundColor = "#a5a7a7";
         event.target.innerHTML = "";
     })
 }

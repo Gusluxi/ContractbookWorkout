@@ -1,6 +1,8 @@
 body {
     color: white;
-    background-color: #485050;
+    background-color: #e1dcdc;
+    font-family: Clashgrotesk,Verdana,sans-serif;
+    line-height: 1.5rem;
 }
 
 #dashboard-div {
@@ -9,11 +11,12 @@ body {
 }
 
 .dashboard-boxes {
-    background-color: black;
+    background-color: #0d1c36;
     padding: 10px;
     margin: 10px;
     height: 500px;
-
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 5px 10px #070606;
 }
 a {
     text-decoration: none;
@@ -47,6 +50,9 @@ a:hover {
 .employee-card a img {
     width: 50px;
     height: 50px;
+    border-radius: 25px 25px 25px 25px;
+    margin: 5px;
+    border: solid 1px #4c58ed;
 }
 
 .name-wrapper {
@@ -55,10 +61,10 @@ a:hover {
 }
 
 .visual-bar {
-    background-color: #a5a7a7;
     height: 20px;
     text-align: center;
     user-select: none;
+    border-radius: 25px 25px 25px 25px;
 }
 .name-bar-wrapper {
     flex-grow: 1;
@@ -81,7 +87,7 @@ a:hover {
 .employee-underline {
     width: 100%;
     height: 5px;
-    background-color: #515757;
+    background-color: #00de9f;
 }
 
 
@@ -107,7 +113,8 @@ a:hover {
 .image-wrapper img {
     width: 90px;
     height: 90px;
-    padding: 5px
+    padding: 5px;
+    border-radius: 40px 40px 40px 40px;
 }
 
 .title-description-challenge-wrapper {
@@ -122,7 +129,6 @@ a:hover {
 }
 
 .description-wrapper {
-    background-color: #485050;
     height: 60px;
 }
 
