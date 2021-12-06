@@ -36,19 +36,24 @@ function countChallenges(employees, workouts, challengeDate){
             return reduce;
     }, {})).filter(employeeMonth => employeeMonth.count >= 20)
     console.log(employeesChallengeDone)
+    let topLimit = 0;
     employees.map(employee => {
         const challenges = employeesChallengeDone.filter(employeeDone => employeeDone.employeeId === employee.id).length
-
-        displayChallenges(challenges, employee)
+        topLimit += 1;
+        if (topLimit <= 5) {
+            displayChallenges(challenges, employee)
+        }
     })
 }
 function displayChallenges(challenges, employee) {
+    console.log(employee);
     const challengesDiv = document.createElement("div");
     challengesDiv.id = employee.id;
     challengesDiv.innerHTML = `
     <div class="challenge-card">
+        
         <div class="challenge-name">
-            Name: ${employee.name}
+            ${employee.name}
         </div>
         <div class="challenge-count">
             Challenges Completed: ${challenges}

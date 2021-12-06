@@ -16,7 +16,7 @@ body {
     padding: 10px;
     margin: 10px;
     height: 500px;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 25px;
     box-shadow: 5px 10px 8px #888888;
 }
 a {
@@ -25,6 +25,7 @@ a {
 }
 a:hover {
     text-decoration: underline;
+    color:white;
 }
 #dashboard-company {
     width: 100%;
@@ -57,7 +58,7 @@ scrollbar-width: none;  / Firefox */
 .employee-card a img {
     width: 50px;
     height: 50px;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 50px;
     margin: 5px;
     border: solid 1px #4c58ed;
 }
@@ -71,7 +72,7 @@ scrollbar-width: none;  / Firefox */
     height: 20px;
     text-align: center;
     user-select: none;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 25px;
 }
 .name-bar-wrapper {
     flex-grow: 1;
@@ -98,12 +99,6 @@ scrollbar-width: none;  / Firefox */
 }
 
 
-#dashboard-challenge-goals {
-    width: 30%;
-    flex-grow: 1;
-    position: relative;
-}
-
 #dashboard-prizes {
     width: 30%;
     flex-grow: 1;
@@ -121,7 +116,7 @@ scrollbar-width: none;  / Firefox */
     width: 90px;
     height: 90px;
     padding: 5px;
-    border-radius: 40px 40px 40px 40px;
+    border-radius: 20px;
 }
 
 .title-description-challenge-wrapper {
@@ -132,13 +127,27 @@ scrollbar-width: none;  / Firefox */
 }
 
 .title-wrapper {
-
+    font-weight: bold;
 }
 
 .description-wrapper {
     height: 60px;
 }
+#dashboard-challenge-goals {
+    width: 30%;
+    flex-grow: 1;
+    position: relative;
+}
+.challenge-card {
 
-.challenge-wrapper {
+}
+
+.challenge-name {
+    font-weight: bold;
+    font-size: 2.0rem;
+    line-height: 3.5rem;
+}
+
+.challenge-count {
 
 }

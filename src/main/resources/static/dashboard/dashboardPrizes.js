@@ -21,7 +21,7 @@ function displayPrizes(prizes) {
             </div>
             <div class="title-description-challenge-wrapper">
             <div class="title-wrapper">
-                Title: ${prizes.prizeName}<br>
+                ${prizes.prizeName}<br>
                 </div>
                 <div class="description-wrapper">
                     Description: ${prizes.description}
