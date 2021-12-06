@@ -1,9 +1,7 @@
 package dk.contractbook.contractbookworkout.controllers;
 
-import dk.contractbook.contractbookworkout.models.Employee;
 import dk.contractbook.contractbookworkout.models.Workout;
 import dk.contractbook.contractbookworkout.repositories.WorkoutsRepo;
-import org.hibernate.jdbc.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

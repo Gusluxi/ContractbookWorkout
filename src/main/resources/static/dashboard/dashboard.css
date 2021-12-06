@@ -3,8 +3,9 @@ body {
     background-color: #e1dcdc;
     font-family: Clashgrotesk,Verdana,sans-serif;
     line-height: 1.5rem;
-}
+    overflow: hidden;
 
+}
 #dashboard-div {
     display: flex;
     flex-wrap: wrap;
@@ -37,12 +38,18 @@ a:hover {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
+
+}
+#dashboard-employees::-webkit-scrollbar {
+    display: none;
 }
 
+#dashboard-employees {
+    -ms-overflow-style: none;  / IE and Edge /
+scrollbar-width: none;  / Firefox */
+}
 
 .employee-card {
-    padding: 5px;
-    margin: 5px;
     display: flex;
     flex-wrap: wrap;
 }

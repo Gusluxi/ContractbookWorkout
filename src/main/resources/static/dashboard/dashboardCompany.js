@@ -9,9 +9,7 @@ let fetchedWorkouts;
 fetch(APIUrl + "/workouts")
     .then(response => response.json())
     .then(workouts => {
-        fetchedWorkouts = workouts;
-        displayYearlyWorkouts(workouts);
-        displayMonthlyWorkouts(workouts);
+
 
     });
 

@@ -11,12 +11,17 @@ fetch(APIUrl + "/employees")
     .then(employees => {
         allEmployees = employees;
         console.log("Employees",employees);
+
         fetch(APIUrl + "/workouts")
             .then(response => response.json())
             .then(workouts => {
                 allWorkouts = workouts;
                 console.log("Workouts",workouts)
                 filterEmployees(allEmployees, allWorkouts)
+                fetchedWorkouts = workouts;
+                displayYearlyWorkouts(workouts);
+                displayMonthlyWorkouts(workouts);
+
                 fetch(APIUrl + "/challengedates")
                     .then(response => response.json())
                     .then(challengeDates => {
@@ -40,7 +45,6 @@ function filterEmployees(employees, workouts) {
             displayEmployeeWorkouts(filteredEmployee, filteredWorkoutsByEmployee)
         }
     })
-
 }
 
 function displayEmployeeWorkouts(employee, workouts) {
