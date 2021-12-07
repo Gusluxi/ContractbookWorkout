@@ -1,6 +1,6 @@
 const dashboardPrizesDiv = document.getElementById("dashboard-prizes");
 const prizeHeader = document.createElement("header");
-prizeHeader.innerHTML = `<div class="header-prize">Prizes of ${monthNames[date.getMonth()]}</div>`
+prizeHeader.innerHTML = `<div class="header">Prizes</div>`
 dashboardPrizesDiv.appendChild(prizeHeader);
 
 fetch(APIUrl + "/prizes")
@@ -24,14 +24,12 @@ function displayPrizes(prizes) {
             </div>
             <div class="title-description-challenge-wrapper">
             <div class="title-wrapper">
-                ${prizes.prizeName}<br>
+                ${prizes.prizeName} - ${prizes.challengeGoal}
                 </div>
                 <div class="description-wrapper">
-                    Description: ${prizes.description}
+                    ${prizes.description}
                 </div>
-                <div class="challenge-wrapper">
-                    Challenge Goal #${prizes.challengeGoal}
-                </div>
+                   
             </div>
         </div>
     `
