@@ -75,6 +75,7 @@ scrollbar-width: none;  / Firefox */
 .header-employees {
     margin: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 .employee-card {
@@ -137,6 +138,7 @@ scrollbar-width: none;  / Firefox */
 .header-prize {
     margin: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 .prize-card {
@@ -176,6 +178,7 @@ scrollbar-width: none;  / Firefox */
 .header-challenge-goals {
     margin: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 .challenge-card {
