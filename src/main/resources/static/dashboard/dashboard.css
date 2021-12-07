@@ -72,12 +72,6 @@ a:hover {
 scrollbar-width: none;  / Firefox */
 }
 
-.header-employees {
-    margin: 10px;
-    font-weight: bold;
-    text-align: center;
-}
-
 .employee-card {
     display: flex;
     flex-wrap: wrap;
@@ -135,12 +129,6 @@ scrollbar-width: none;  / Firefox */
     overflow-y: auto;
 }
 
-.header-prize {
-    margin: 10px;
-    font-weight: bold;
-    text-align: center;
-}
-
 .prize-card {
     padding: 5px;
     margin: 5px;
@@ -173,12 +161,6 @@ scrollbar-width: none;  / Firefox */
     width: 15%;
     flex-grow: 1;
     position: relative;
-}
-
-.header-challenge-goals {
-    margin: 10px;
-    font-weight: bold;
-    text-align: center;
 }
 
 .challenge-card {
