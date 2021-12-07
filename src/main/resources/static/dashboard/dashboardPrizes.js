@@ -24,14 +24,12 @@ function displayPrizes(prizes) {
             </div>
             <div class="title-description-challenge-wrapper">
             <div class="title-wrapper">
-                ${prizes.prizeName}<br>
+                ${prizes.prizeName} - ${prizes.challengeGoal}
                 </div>
                 <div class="description-wrapper">
-                    Description: ${prizes.description}
+                    ${prizes.description}
                 </div>
-                <div class="challenge-wrapper">
-                    Challenge Goal #${prizes.challengeGoal}
-                </div>
+                   
             </div>
         </div>
     `

@@ -42,19 +42,19 @@ function countChallenges(employees, workouts, challengeDate){
         const challenges = employeesChallengeDone.filter(employeeDone => employeeDone.employeeId === employee.id).length
         topLimit += 1;
         if (topLimit <= 5) {
-            displayChallenges(challenges, employee)
+            displayChallenges(challenges, employee, topLimit)
         }
     })
 }
 
-function displayChallenges(challenges, employee) {
+function displayChallenges(challenges, employee, place) {
     const challengesDiv = document.createElement("div");
     challengesDiv.id = employee.id;
     challengesDiv.innerHTML = `
     <div class="challenge-card">
     <a href="../employee/employee.html?employeeId=${employee.id}"><img src="${employee.slackImage}" alt="Employee Image" width="50px"></a>
     <div class="challenge-name-count-wrapper">
-        <div class="challenge-name">
+        <div class="challenge-name" id="place-${place}">
             ${employee.name}
         </div>
         <div class="challenge-count">
@@ -64,4 +64,18 @@ function displayChallenges(challenges, employee) {
     </div>
     `
     dashboardChallengeDiv.appendChild(challengesDiv);
+    let placeColor;
+    if (place === 1) {
+        placeColor = "#ffc94e";
+    } else if (place === 2) {
+        placeColor = "#d7d7d7";
+    } else if (place === 3) {
+        placeColor = "#e07c35";
+    } else {
+        placeColor = "#4caaed";
+    }
+
+    document.getElementById("place-"+place).style.color = placeColor;
+
+
 }

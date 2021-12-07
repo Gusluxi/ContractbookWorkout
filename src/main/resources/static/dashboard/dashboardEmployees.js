@@ -6,7 +6,7 @@ let startDate = new Date(date.getFullYear(), date.getMonth(), 1);
 let endDate = new Date(date.getFullYear(), date.getMonth() +1, 0);
 let monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
 const employeeHeader = document.createElement("header");
-employeeHeader.innerHTML = `<div class="header-employees">Employee Workouts in ${monthNames[date.getMonth()]}</div>`
+employeeHeader.innerHTML = `<div class="header">Employee Workouts in ${monthNames[date.getMonth()]}</div>`
 dashboardEmployeesDiv.appendChild(employeeHeader);
 
 fetch(APIUrl + "/employees")
@@ -23,7 +23,6 @@ fetch(APIUrl + "/employees")
                 filterEmployees(allEmployees, allWorkouts)
                 fetchedWorkouts = workouts;
                 displayYearlyWorkouts(workouts);
-                displayMonthlyWorkouts(workouts);
 
                 fetch(APIUrl + "/challengedates")
                     .then(response => response.json())
