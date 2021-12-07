@@ -1,6 +1,6 @@
 const dashboardPrizesDiv = document.getElementById("dashboard-prizes");
 const prizeHeader = document.createElement("header");
-prizeHeader.innerHTML = `<div class="header-prize">Prizes of ${monthNames[date.getMonth()]}</div>`
+prizeHeader.innerHTML = `<div class="header-prize">Prizes of ${date.getFullYear()}</div>`
 dashboardPrizesDiv.appendChild(prizeHeader);
 
 fetch(APIUrl + "/prizes")

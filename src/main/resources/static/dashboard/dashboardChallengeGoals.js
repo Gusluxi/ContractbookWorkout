@@ -1,6 +1,6 @@
 const dashboardChallengeDiv = document.getElementById("dashboard-challenge-goals");
 const challengeHeader = document.createElement("header");
-challengeHeader.innerHTML = `<div class="header-challenge-goals">Top 5 as of ${monthNames[date.getMonth()]}</div>`
+challengeHeader.innerHTML = `<div class="header-challenge-goals">Top 5 as of ${date.toLocaleDateString()}</div>`
 dashboardChallengeDiv.appendChild(challengeHeader);
 
 function displayTopEmployeeChallenges(employees, workouts, challengeDate) {
