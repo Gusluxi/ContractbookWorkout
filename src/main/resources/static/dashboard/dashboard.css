@@ -162,6 +162,7 @@ scrollbar-width: none;  / Firefox */
     flex-grow: 1;
     position: relative;
 }
+
 .challenge-card {
     display: flex;
     margin: 20px;
