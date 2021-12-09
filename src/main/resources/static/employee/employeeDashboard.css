@@ -25,15 +25,14 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    align-items: flex-end;
-    height: 650px;
-
+    margin-top: 129px;
 }
 
-#graph-counter a {
+#graph-counter div {
     margin-bottom: 100px;
     color: #00de9f;
     top: 100px;
+    height: 2px;
 
 }
 
@@ -46,7 +45,7 @@
 .graph-line {
     width: 1055px;
     height: 2px;
-    border-bottom: dashed darkblue 0.1px;
+    border-bottom: dashed darkblue 1px;
     top: 100px;
     margin-bottom: 100px;
 }

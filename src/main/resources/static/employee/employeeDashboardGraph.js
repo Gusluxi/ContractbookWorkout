@@ -31,11 +31,11 @@ function constructWorkoutGraph(employeeWorkouts) {
     const graphCountDiv = document.createElement("div");
     graphCountDiv.innerHTML = `
     <div id="graph-counter">
-    <a>25</a>
-    <a>20</a>
-    <a>15</a>
-    <a>10</a>
-    <a>5</a>
+    <div>25</div>
+    <div>20</div>
+    <div>15</div>
+    <div>10</div>
+    <div>5</div>
     </div>
     `;
     employeeDashboardCounterDiv.appendChild(graphCountDiv);

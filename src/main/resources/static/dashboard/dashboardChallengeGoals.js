@@ -22,7 +22,8 @@ function countChallenges(employees, workouts, challengeDate){
                 if (workoutDate.toDateString() === date.toDateString()) {
                     monthCounter.push({
                         employeeId: employee.id,
-                        month: workoutDate.getMonth()
+                        month: workoutDate.getMonth(),
+                        year: workoutDate.getFullYear()
                     })
                 }
             })
