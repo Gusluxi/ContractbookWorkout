@@ -1,18 +1,55 @@
 #graph-box {
-    background-color: orange;
+    background-color: #0d1c36;
     margin: 20px;
-
     padding: 40px;
+    width: 1120px;
+    border-radius: 25px;
+    box-shadow: 5px 10px 8px #888888;
 }
 
 #employee-workout-graph {
-    background-color: #265f88;
-    width: 1070px;
-    height: 400px;
+    background-color: whitesmoke;
+    position: relative;
+    width: auto;
+    height: 650px;
     margin-bottom: 23px;
     margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+    border: 3px solid white;
 }
 
+#graph-counter {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-end;
+    height: 650px;
+
+}
+
+#graph-counter a {
+    margin-bottom: 100px;
+    color: #00de9f;
+    top: 100px;
+
+}
+
+#line-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+
+.graph-line {
+    width: 1055px;
+    height: 2px;
+    border-bottom: dashed darkblue 0.1px;
+    top: 100px;
+    margin-bottom: 100px;
+}
 
 
 #employee-workout-dates {
