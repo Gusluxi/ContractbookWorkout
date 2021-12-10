@@ -18,6 +18,14 @@ fetch(APIUrl + "/employees/" + employeeId )
             .then(employeeWorkouts => {
                 console.log(employeeWorkouts);
                 constructWorkoutGraph(employeeWorkouts);
+                constructStats(employee, employeeWorkouts);
+                fetch(APIUrl + "/challengedates")
+                    .then(response => response.json())
+                    .then(challengeDates => {
+                        challengeDates.map(challengeDate =>{
+                            displayTopEmployeeChallenges(employee, employeeWorkouts, challengeDate)
+                        })
+                    })
             })
     })
 
@@ -41,6 +49,7 @@ function constructWorkoutGraph(employeeWorkouts) {
     employeeDashboardCounterDiv.appendChild(graphCountDiv);
 
     let graphBarHeight = 0;
+    let trained;
     for (let d = startDate; d <= endDate; d.setDate(d.getDate()+1)) {
         const workoutGraphDateDiv = document.createElement("div");
         workoutGraphDateDiv.setAttribute("id", "date-wrapper");
@@ -50,18 +59,24 @@ function constructWorkoutGraph(employeeWorkouts) {
         employeeDashboardDateDiv.appendChild(workoutGraphDateDiv);
         const workoutGraphBarDiv = document.createElement("div");
         workoutGraphBarDiv.setAttribute("id","bar-wrapper");
-
+        trained = false;
         employeeWorkouts.map(workout => {
             if (new Date(workout.workoutDate).toDateString() === d.toDateString()) {
                 graphBarHeight += 20.5;
-                console.log(graphBarHeight);
-                console.log(d)
+                trained = true;
             }
         })
         workoutGraphBarDiv.innerHTML = `
-        <div id="bar-${d.toDateString()}" style="height: ${graphBarHeight}px; width: 28px; margin-left: 6px; background-color: cornflowerblue;">
+        <div id="bar-${d.toDateString()}" style="height: ${graphBarHeight}px; width: 28px; margin-left: 6px; background-color: #497ae5;">
         `;
+
         employeeDashboardGraphDiv.appendChild(workoutGraphBarDiv);
+        const dateDiv = document.getElementById(`bar-${d.toDateString()}`);
+        console.log(dateDiv);
+        if(trained) {
+            dateDiv.style.backgroundColor = "#ee9c3e"
+        }
+
     }
 
     const graphLineDiv = document.createElement("div");

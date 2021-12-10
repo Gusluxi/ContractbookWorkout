@@ -1,8 +1,38 @@
+#employee-div {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#content-box {
+    padding: 10px;
+    margin:10px;
+    background-color: #0d1c36;
+    height: 100px;
+    width: 97%;
+    border-radius: 25px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#logo {
+    margin: 18px;
+}
+
+#extra-stats {
+    padding: 10px;
+    margin:10px;
+    background-color: #0d1c36;
+    height: 743px;
+    border-radius: 25px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+
 #graph-box {
     background-color: #0d1c36;
-    margin: 20px;
+    margin: 10px;
     padding: 40px;
     width: 1120px;
+    height: 680px;
     border-radius: 25px;
     box-shadow: 5px 10px 8px #888888;
 }
