@@ -1,0 +1,41 @@
+#workout-table {
+    margin: auto;
+    align-content: center;
+    width: 60%;
+    border: 3px solid #4c58ed;
+    padding: 10px;
+    background-color: #0d1c36;
+    box-shadow: 5px 10px 8px #888888;
+    border-radius: 25px;
+
+}
+
+p {
+    text-decoration: none;
+    color:white;
+    text-align: center;
+}
+
+button:hover {
+    text-decoration: underline;
+    color:white;
+    border: #4c58ed;
+    border: #4c58ed;
+}
+
+input {
+    margin-left: 25%;
+    height: 30px;
+    width: 50%;
+    margin-bottom: 10px;
+
+}
+
+table, tr, td {
+    margin: auto;
+    text-align: center;
+    border: 1px solid white;
+    border-collapse: collapse;
+    width: 50%;
+    background-color: #0d1c36;
+}

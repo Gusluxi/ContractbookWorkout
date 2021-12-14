@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Edit</title>
+    <script src="../global.js"></script>
+    <script src="../lib/HTMLEscape.js"></script>
+    <link rel="stylesheet" href="./adminWorkoutEdit.css">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+</head>
+<body>
+
+<div id="workout-table">
+    <input type="text" id="date-search" onkeyup="searchFunction()" placeholder="Search for dates.." title="Type in a date">
+    <input type="date" id="new-workout-date">
+    <button id="create-new-workout-button">Add new workout</button>
+    <table>
+        <thead>
+        <tr>
+            <th>Workout date</th>
+            <th>Delete workout</th>
+        </tr>
+        </thead>
+        <tbody id="employee-workout-table-tbody">
+        </tbody>
+    </table>
+
+</div>
+
+<script src="./adminWorkoutEdit.js"></script>
+
+</body>
+</html>

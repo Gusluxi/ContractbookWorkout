@@ -31,7 +31,9 @@ public class Workouts {
 
     @PostMapping("/workouts")
     public Workout addWorkout(@RequestBody Workout newWorkout) {
+        System.out.println(newWorkout);
         newWorkout.setId(null);
+        System.out.println(newWorkout);
         return workouts.save(newWorkout);
     }
 
