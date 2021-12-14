@@ -3,12 +3,26 @@ const challengeHeader = document.createElement("header");
 challengeHeader.innerHTML = `<div class="header">Top 5 as of ${date.toLocaleDateString()}</div>`
 dashboardChallengeDiv.appendChild(challengeHeader);
 let allChallengeAmounts;
+let currentChallengeGoal = 20;
 
 fetch(APIUrl + "/challengeamounts")
     .then(response => response.json())
     .then(challengeAmounts => {
         allChallengeAmounts = challengeAmounts;
+        currentMonthsGoal()
     });
+
+function currentMonthsGoal() {
+    allChallengeAmounts.map(challengeAmount => {
+        if (challengeAmount.challengeMonth === date.getMonth() && date.getFullYear() === challengeAmount.challengeYear) {
+            currentChallengeGoal = challengeAmount.challengeAmount;
+        }
+    })
+    const employeeHeader = document.createElement("header");
+    employeeHeader.innerHTML = `<div class="header">Employee Workouts in ${monthNames[date.getMonth()]} <br> This months goal - ${currentChallengeGoal}</div>`
+    dashboardEmployeesDiv.appendChild(employeeHeader);
+}
+
 
 function displayTopEmployeeChallenges(employees, workouts, challengeDate) {
     let filteredChallengeWorkouts = workouts.filter(workout => {let workoutDate = new Date(workout.workoutDate);
