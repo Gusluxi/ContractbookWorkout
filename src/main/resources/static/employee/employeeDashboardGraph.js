@@ -24,10 +24,10 @@ fetch(APIUrl + "/employees/" + employeeId )
                     .then(challengeDates => {
                         challengeDates.map(challengeDate =>{
                             displayTopEmployeeChallenges(employee, employeeWorkouts, challengeDate)
-                        })
-                    })
-            })
-    })
+                        });
+                    });
+            });
+    });
 
 const employeeDashboardDateDiv = document.getElementById("employee-workout-dates");
 const employeeDashboardGraphDiv = document.getElementById("employee-workout-graph");
@@ -39,11 +39,11 @@ function constructWorkoutGraph(employeeWorkouts) {
     const graphCountDiv = document.createElement("div");
     graphCountDiv.innerHTML = `
     <div id="graph-counter">
-    <div>25</div>
-    <div>20</div>
-    <div>15</div>
-    <div>10</div>
-    <div>5</div>
+        <div>25</div>
+        <div>20</div>
+        <div>15</div>
+        <div>10</div>
+        <div>5</div>
     </div>
     `;
     employeeDashboardCounterDiv.appendChild(graphCountDiv);

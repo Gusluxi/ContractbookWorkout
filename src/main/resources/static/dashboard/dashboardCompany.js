@@ -18,8 +18,8 @@ function displayYearlyWorkouts(workouts) {
         return (startDate < workoutDates && workoutDates < endDate)
     });
     companyWorkoutDiv.innerHTML = `
-    <div id="monthly-count" class="workout-counters">Total Workouts This Month: ${monthlyWorkouts.length}</div>
-    <div id="yearly-count" class="workout-counters">Total Workouts This Year: ${yearlyWorkouts.length}</div>
+    <div id="monthly-count" class="workout-counters">Workouts/Month <br><b style="color: #4caaed">${monthlyWorkouts.length}</b></div>
+    <div id="yearly-count" class="workout-counters">Workouts/Year <br><b style="color: #00de9f">${yearlyWorkouts.length}</b></div>
     `;
     companyWorkoutWrapperYearly.appendChild(companyWorkoutDiv);
 }

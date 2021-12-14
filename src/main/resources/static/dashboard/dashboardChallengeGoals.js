@@ -2,19 +2,24 @@ const dashboardChallengeDiv = document.getElementById("dashboard-challenge-goals
 const challengeHeader = document.createElement("header");
 challengeHeader.innerHTML = `<div class="header">Top 5 as of ${date.toLocaleDateString()}</div>`
 dashboardChallengeDiv.appendChild(challengeHeader);
+let allChallengeAmounts;
+
+fetch(APIUrl + "/challengeamounts")
+    .then(response => response.json())
+    .then(challengeAmounts => {
+        allChallengeAmounts = challengeAmounts;
+    });
 
 function displayTopEmployeeChallenges(employees, workouts, challengeDate) {
     let filteredChallengeWorkouts = workouts.filter(workout => {let workoutDate = new Date(workout.workoutDate);
     return (new Date(challengeDate.startDate) <= workoutDate && workoutDate <= new Date(challengeDate.endDate))
     });
-    console.log("filtered Workouts:", filteredChallengeWorkouts)
     countChallenges(employees, filteredChallengeWorkouts, challengeDate)
 }
 
 function countChallenges(employees, workouts, challengeDate){
     let monthCounter = [];
     employees.map(employee => {
-        console.log(employee)
         let employeeWorkouts = workouts.filter(workout => workout.employee.id === employee.id)
         for (let date = new Date(challengeDate.startDate); date <= new Date(challengeDate.endDate); date.setDate(date.getDate()+1)) {
             employeeWorkouts.map(workout => {
@@ -29,15 +34,21 @@ function countChallenges(employees, workouts, challengeDate){
             })
         }
     })
-    console.log(monthCounter);
     const employeesChallengeDone = Object.values(monthCounter.reduce((reduce, element) => {
         let key = `${element.employeeId}|${element.month}`;
         if (!reduce[key])
             reduce[key] = {...element, count: 1}
         else reduce[key].count += 1;
             return reduce;
-    }, {})).filter(employeeMonth => employeeMonth.count >= 20)
-    console.log(employeesChallengeDone)
+    }, {})).filter(employeeMonth => {
+        for (let i = 0; i < allChallengeAmounts.length; i++) {
+            if (allChallengeAmounts[i].challengeMonth === employeeMonth.month && allChallengeAmounts[i].challengeYear === employeeMonth.year) {
+                console.log("Employee: ",employeeMonth, "DB amount", allChallengeAmounts[i].challengeAmount,"Employee Amount", employeeMonth.count)
+                return employeeMonth.count >= allChallengeAmounts[i].challengeAmount;
+            }
+        }
+        return employeeMonth.count >= 20;
+        })
     let topLimit = 0;
     employees.map(employee => {
         const challenges = employeesChallengeDone.filter(employeeDone => employeeDone.employeeId === employee.id).length
@@ -77,6 +88,5 @@ function displayChallenges(challenges, employee, place) {
     }
 
     document.getElementById("place-"+place).style.color = placeColor;
-
-
 }
+

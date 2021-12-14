@@ -35,8 +35,6 @@ fetch(APIUrl + "/employees")
     })
 
 
-
-
 function filterEmployees(employees, workouts) {
     let newWorkouts = workouts.filter(workout => filterWorkoutsForMonth(workout))
     employees.sort((employeeA,employeeB) => sortEmployeeByWorkoutCount(employeeA,employeeB,newWorkouts));

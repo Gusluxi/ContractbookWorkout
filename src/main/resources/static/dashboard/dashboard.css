@@ -43,15 +43,17 @@ a:hover {
 }
 .workout-counters {
     flex-grow: 1;
-    margin: 30px 5px 5px 30px;
-    font-size: 2.3rem;
+    line-height: 3.0rem;
+    font-size: 2.0rem;
+    text-align: center;
+    width: auto;
 
 }
 #yearly-count {
-    color: #00de9f;
+    margin-left: 100px;
 }
 #monthly-count {
-    color: #4caaed;
+    margin-left: 300px;
 }
 
 #dashboard-employees {

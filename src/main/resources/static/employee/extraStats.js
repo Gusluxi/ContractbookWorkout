@@ -5,8 +5,8 @@ function constructStats(employee, employeeWorkouts) {
     const totalWorkoutDiv = document.createElement("div");
     totalWorkoutDiv.innerHTML = `
     <div>
-        Employee: ${employee.name}<br>
-        Total Workouts: ${employeeWorkouts.length}
+        <div id="employee-name">${employee.name}<br></div>
+        <div id="total-workouts">Total Workouts<br>${employeeWorkouts.length}</div>
     </div>
     `;
     extraStatsDiv.appendChild(totalWorkoutDiv);

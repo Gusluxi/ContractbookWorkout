@@ -19,13 +19,25 @@
 
 #extra-stats {
     padding: 10px;
-    margin:10px;
+    margin: 10px;
     background-color: #0d1c36;
-    height: 743px;
     border-radius: 25px;
     box-shadow: 5px 10px 8px #888888;
+    width: 300px;
 }
-
+#employee-name {
+    font-size: 2.2rem;
+    text-align: center;
+    width: auto;
+    height: 50px;
+    margin-top: 20px;
+}
+#total-workouts {
+    font-size: 1.8rem;
+    text-align: center;
+    width: auto;
+    line-height: 3.0rem;
+}
 
 #graph-box {
     background-color: #0d1c36;
