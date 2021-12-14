@@ -1,7 +1,6 @@
 package dk.contractbook.contractbookworkout.controllers;
 
 import dk.contractbook.contractbookworkout.models.ChallengeDate;
-import dk.contractbook.contractbookworkout.models.Employee;
 import dk.contractbook.contractbookworkout.repositories.ChallengeDatesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -59,7 +59,7 @@ public class Workouts {
     }
 */
     @DeleteMapping("/workouts/{id}")
-    public void deleteSummoner(@PathVariable Long id) {
+    public void deleteWorkout(@PathVariable Long id) {
         workouts.deleteById(id);
     }
 
