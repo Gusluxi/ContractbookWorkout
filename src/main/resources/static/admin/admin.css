@@ -6,6 +6,7 @@
     box-shadow: 5px 10px 8px #888888;
     border-radius: 25px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #table-wrapper img {
@@ -46,16 +47,59 @@ th {
     margin: 5px;
 }
 
-a {
+.employee-a {
     text-decoration: none;
     color:white;
     text-align: left;
     line-height: 3.6;
 }
 
-a:hover {
+.employee-a:hover {
     text-decoration: underline;
     color:white;
     border: #4c58ed;
 }
 
+a {
+    text-decoration: none;
+    color:white;
+    border: #4c58ed;
+}
+
+
+.admin-prize-box {
+    background-color: #0d1c36;
+    padding: 10px;
+    margin: 10px;
+    height: 500px;
+    width: 30%;
+    border-radius: 25px;
+    box-shadow: 5px 10px 8px #888888;
+}
+#admin-prize-box {
+    width: 30%;
+    flex-grow: 1;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.admin-prize-card {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.title-description-challenge-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 50%
+}
+
+.title-wrapper {
+    font-weight: bold;
+}
+
+.description-wrapper {
+    height: 60px;
+}

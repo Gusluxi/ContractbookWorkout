@@ -20,7 +20,7 @@ function createEmployeeTableRow(employee) {
 function constructEmployeeTableRow(employeeTableRow, employee) {
     employeeTableRow.innerHTML = `
             <td>
-                <a href="./employeeWorkoutEdit.html?employeeId=${employee.id}"><img src="${employee.slackImage}" alt="Employee Image" width="50px">${employee.name}</a>
+                <a class="employee-a" href="./employeeWorkoutEdit.html?employeeId=${employee.id}"><img src="${employee.slackImage}" alt="Employee Image" width="50px">${employee.name}</a>
             </td>
     `;
 

@@ -10,10 +10,10 @@ fetch(APIUrl + "/prizes")
         prizes.sort(function(prizeA, prizeB) {
             return prizeA.challengeGoal - prizeB.challengeGoal;
         });
-        prizes.map(displayPrizes)
+        prizes.map(adminDisplayPrizes)
     })
 
-function displayPrizes(prizes) {
+function adminDisplayPrizes(prizes) {
     const prizeCardDiv = document.createElement("div");
     prizeCardDiv.id=prizes.id;
 
