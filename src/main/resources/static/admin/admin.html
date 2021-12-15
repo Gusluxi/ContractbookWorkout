@@ -12,9 +12,12 @@
 <body>
 
 <div id="table-wrapper">
-    <input type="text" id="name-search" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name">
-    <table>
+
+    <table id="employee-table">
         <thead>
+        <tr>
+            <th><input type="text" id="name-search" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name"></th>
+        </tr>
         <tr>
             <th>Employees</th>
         </tr>
@@ -23,7 +26,7 @@
         </tbody>
     </table>
 
-    <table>
+    <table id="date-table">
         <thead>
         <tr>
             <th>Year</th>
@@ -35,7 +38,7 @@
         </tbody>
     </table>
 
-    <table>
+    <table id="prize-table">
         <thead>
         <tr>
             <th>Year</th>

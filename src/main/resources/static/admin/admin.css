@@ -5,6 +5,7 @@
     background-color: #0d1c36;
     box-shadow: 5px 10px 8px #888888;
     border-radius: 25px;
+    display: flex;
 }
 
 #table-wrapper img {
@@ -21,6 +22,7 @@ table, tr, td {
     border-collapse: collapse;
     width: 30%;
     background-color: #0d1c36;
+    margin: 10px;
 }
 
 th {
@@ -29,8 +31,8 @@ th {
 
 input {
     height: 30px;
-    width: 29.6%;
-    margin-bottom: 10px;
+    width: 90%;
+    margin: 10px;
 }
 
 a {
