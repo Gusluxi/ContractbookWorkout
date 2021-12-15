@@ -18,7 +18,7 @@ public class ChallengeAmounts {
 
 
     @PostMapping("/challengeamounts")
-    public ChallengeAmount addWorkout(@RequestBody ChallengeAmount newChallengeAmount) {
+    public ChallengeAmount addChallengeAmount(@RequestBody ChallengeAmount newChallengeAmount) {
         newChallengeAmount.setId(null);
         return challengeAmounts.save(newChallengeAmount);
     }
@@ -34,7 +34,18 @@ public class ChallengeAmounts {
         }
     }
 
-    @DeleteMapping("/challengeAmount/{id}")
+    @PatchMapping("/challengeamounts/{id}")
+    public String patchChallengeAmount(@PathVariable Long id, @RequestBody ChallengeAmount challengeAmountToUpdate) {
+        return challengeAmounts.findById(id).map( foundChallengeAmount -> {
+            if(challengeAmountToUpdate.getChallengeAmount() != 0) foundChallengeAmount.setChallengeAmount(challengeAmountToUpdate.getChallengeAmount());
+            if(challengeAmountToUpdate.getChallengeMonth() != 0) foundChallengeAmount.setChallengeMonth(challengeAmountToUpdate.getChallengeMonth());
+            if(challengeAmountToUpdate.getChallengeYear() != 0) foundChallengeAmount.setChallengeYear(challengeAmountToUpdate.getChallengeYear());
+            challengeAmounts.save(foundChallengeAmount);
+            return "ChallengeAmount updated";
+        }).orElse("ChallengeAmount not found");
+    }
+
+    @DeleteMapping("/challengeamounts/{id}")
     public void deleteChallengeAmount(@PathVariable Long id) {
         challengeAmounts.deleteById(id);
     }

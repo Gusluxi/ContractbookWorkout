@@ -23,16 +23,27 @@ table, tr, td {
     width: 30%;
     background-color: #0d1c36;
     margin: 10px;
+    height: 100%;
+}
+
+#date-table td {
+    text-align: center;
 }
 
 th {
     text-align: center;
 }
 
-input {
+#name-search {
     height: 30px;
     width: 90%;
     margin: 10px;
+}
+
+.input-challenge {
+    width: 70%;
+    height:30px;
+    margin: 5px;
 }
 
 a {

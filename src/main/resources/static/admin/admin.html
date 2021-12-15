@@ -16,10 +16,10 @@
     <table id="employee-table">
         <thead>
         <tr>
-            <th><input type="text" id="name-search" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name"></th>
+            <th>Employees</th>
         </tr>
         <tr>
-            <th>Employees</th>
+            <th><input type="text" id="name-search" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name"></th>
         </tr>
         </thead>
         <tbody id="employee-table-tbody">
@@ -32,9 +32,25 @@
             <th>Year</th>
             <th>Month</th>
             <th>Count</th>
+            <th></th>
         </tr>
+
         </thead>
         <tbody id="date-table-tbody">
+        <tr>
+            <td>
+                <input class="input-challenge" placeholder="Year" id="create-year">
+            </td>
+            <td>
+                <input class="input-challenge" placeholder="Month 0-11" id="create-month">
+            </td>
+            <td>
+                <input class="input-challenge" placeholder="Count" id="create-count">
+            </td>
+            <td>
+                <button id="create-challenge">➕</button>
+            </td>
+        </tr>
         </tbody>
     </table>
 
