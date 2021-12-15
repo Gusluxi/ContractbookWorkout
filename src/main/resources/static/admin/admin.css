@@ -1,29 +1,25 @@
-#employee-table {
-    margin: auto;
-    align-content: center;
-    width: 60%;
+#table-wrapper {
+    margin: 10px;
     border: 3px solid #4c58ed;
-    padding: 10px;
+    padding: 20px;
     background-color: #0d1c36;
     box-shadow: 5px 10px 8px #888888;
     border-radius: 25px;
 }
-#employee-table img {
+
+#table-wrapper img {
     float: left;
     width: 50px;
     height: 50px;
     border-radius: 50px;
     margin: 5px;
-    margin-left: 30%;
     border: solid 1px #4c58ed;
 }
 
 table, tr, td {
-    margin: auto;
-    text-align: left;
     border: 1px solid white;
     border-collapse: collapse;
-    width: 50%;
+    width: 30%;
     background-color: #0d1c36;
 }
 
@@ -32,11 +28,9 @@ th {
 }
 
 input {
-    margin-left: 25%;
     height: 30px;
-    width: 50%;
+    width: 29.6%;
     margin-bottom: 10px;
-
 }
 
 a {
@@ -49,7 +43,6 @@ a {
 a:hover {
     text-decoration: underline;
     color:white;
-    border: #4c58ed;
     border: #4c58ed;
 }
 

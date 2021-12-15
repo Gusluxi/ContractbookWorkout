@@ -1,4 +1,4 @@
-const employeeTableBody = document.getElementById("admin-table-tbody");
+const employeeTableBody = document.getElementById("employee-table-tbody");
 
 
 fetch(APIUrl + "/employees")

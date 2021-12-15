@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div id="employee-table">
+<div id="table-wrapper">
     <input type="text" id="name-search" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name">
     <table>
         <thead>
@@ -19,14 +19,42 @@
             <th>Employees</th>
         </tr>
         </thead>
-        <tbody id="admin-table-tbody">
-
+        <tbody id="employee-table-tbody">
         </tbody>
     </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Year</th>
+            <th>Month</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody id="date-table-tbody">
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Year</th>
+            <th>Month</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody id="prize-table-tbody">
+        </tbody>
+    </table>
+
+
+
 
 </div>
 
 
 <script src="./adminEmployees.js"></script>
+<script src="./adminDates.js"></script>
+<script src="./adminPrizes.js"></script>
 </body>
 </html>
