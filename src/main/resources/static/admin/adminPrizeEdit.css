@@ -1,0 +1,62 @@
+#edit-prize-box {
+    align-content: center;
+    width: 30%;
+    border: 3px solid #4c58ed;
+    padding: 10px;
+    background-color: #0d1c36;
+    box-shadow: 5px 10px 8px #888888;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13%;
+}
+
+
+#inner-edit-prize-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    flex-grow: 1;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    text-align: center;
+    font-size: large;
+}
+
+
+label {
+    margin-top: 15px;
+}
+
+input label {
+    align-self: center;
+    width: 500px;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align-items: center ;
+
+}
+
+button {
+    margin-top: 20px;
+    width: 140px;
+}
+
+textarea {
+    font-family: Clashgrotesk,Verdana,sans-serif;
+    height: 100px;
+    widht: 100px;
+}

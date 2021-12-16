@@ -1,5 +1,6 @@
 package dk.contractbook.contractbookworkout.controllers;
 
+import dk.contractbook.contractbookworkout.models.ChallengeAmount;
 import dk.contractbook.contractbookworkout.models.Prize;
 import dk.contractbook.contractbookworkout.repositories.PrizesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,18 +40,18 @@ public class Prizes {
         }
     }
 
-    /*
     @PatchMapping("/prizes/{id}")
-    public String patchPrize(@PathVariable Long id, @RequestBody Prize prizeToUpdate) {
+    public String patchPrizeAmount(@PathVariable Long id, @RequestBody Prize prizeToUpdate) {
         return prizes.findById(id).map( foundPrize -> {
-            if(prizeToUpdate.getPrizeId() != null) foundPrize.setSummonerId(prizeToUpdate.getName());
-            if(prizeToUpdate.getPuuId() != null) foundPrize.setPuuId(prizeToUpdate.getPuuId());
-            if(prizeToUpdate.getName() != null) foundPrize.setName(prizeToUpdate.getName());
+            if(prizeToUpdate.getPrizeName() != null) foundPrize.setPrizeName(prizeToUpdate.getPrizeName());
+            if(prizeToUpdate.getDescription() != null) foundPrize.setDescription(prizeToUpdate.getDescription());
+            if(prizeToUpdate.getPrizeImage() != null) foundPrize.setPrizeImage(prizeToUpdate.getPrizeImage());
+            if(prizeToUpdate.getChallengeGoal() != 0) foundPrize.setChallengeGoal(prizeToUpdate.getChallengeGoal());
             prizes.save(foundPrize);
             return "Prize updated";
         }).orElse("Prize not found");
     }
-*/
+
     @DeleteMapping("/prizes/{id}")
     public void deletePrize(@PathVariable Long id) {
         prizes.deleteById(id);

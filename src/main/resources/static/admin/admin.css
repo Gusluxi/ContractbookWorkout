@@ -105,6 +105,8 @@ a {
     border-radius: 25px;
     box-shadow: 5px 10px 8px #888888;
     flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 #admin-prize-box {
     width: 30%;
